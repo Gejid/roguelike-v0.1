@@ -1,5 +1,6 @@
 import sys
 import os
+import msvcrt
 playercords = [0, 0]
 def Update():
     for a in range(20):
@@ -13,7 +14,7 @@ msg = "ROGUELIKE v0.1"
 while True:
     Update()
     print("MESSAGE: " + msg)
-    wtd = input("/>")[0]
+    wtd = msvcrt.getch().decode("utf-8").lower()
     if(wtd == "w"):
         if(playercords[0] == 0):
             msg = "REACHED BORDER"
